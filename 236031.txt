@@ -1,0 +1,94 @@
+mkdir SI_2025_lab1_236031
+-Креираме директориум со име SI_2025_lab1_236031
+
+cd SI_2025_lab1_236031
+-Влегуваме во новиот фолдер
+
+git init
+-Иницијализираме git
+
+git config --global init.defaultBranch master
+-Поставуваме главната гранка да се вика master
+
+git remote add origin https://github.com/aleksandardimoski/SI_2025_lab1_236031.git
+-Ja сврзуваме со GitHub
+
+echo "# SI_2025_lab1_236031" >> README.md
+-креираме readme фајл и го модифицираме од после
+
+git add README.md
+-Го додаваме во Staged
+
+git commit -m "Initial commit"
+
+git push -u origin master
+-Го поставуваме на GitHub
+
+git add SI2025Lab1Main.java
+
+
+git commit -m "Add starter code"
+
+git push -u origin master
+
+
+ДЕЛ 1
+git fetch origin
+-За да ги превземеме промените направени на GitHub за новите 3 гранки од Issues што се во Progress
+
+ДЕЛ 2
+Ја имплементираме втората функција
+git checkout 2-find-all-completed-tasks
+git add SI2025Lab1Main.java
+git commit -m "implement getCompletedTasks"
+git push -u origin 2-find-all-completed-tas
+
+Ја имплементираме петата функција
+git checkout 5-filter-tasks-by-category
+git add SI2025Lab1Main.java
+git commit -m "implement filterByCategory"
+git push -u origin 5-filter-tasks-by-category
+
+Ја имплементираме седмата функција
+git checkout 7-count-tasks-per-category
+git add SI2025Lab1Main.java
+git commit -m "implement countTasksPerCategory"
+git push -u origin 7-count-tasks-per-category
+
+При спојување на двете грагни countTasksPerCategory и filterByCategory не наидов на никаков конфликт, немаше никакво "мешање" на кодот бидејќи беа имплементирани две различни функции.
+
+git pull origin master
+Добив:
+remote: Enumerating objects: 10, done.
+remote: Counting objects: 100% (10/10), done.
+remote: Compressing objects: 100% (4/4), done.
+remote: Total 4 (delta 1), reused 0 (delta 0), pack-reused 0 (from 0)
+Unpacking objects: 100% (4/4), 2.05 KiB | 299.00 KiB/s, done.
+From https://github.com/aleksandardimoski/SI_2025_lab1_236031
+ * branch            master     -> FETCH_HEAD
+   a1e0040..d8a1a8e  master     -> origin/master
+Updating a1e0040..d8a1a8e
+Fast-forward
+ SI2025Lab1Main.java | 17 +++++++++++++----
+ 1 file changed, 13 insertions(+), 4 deletions(-)
+
+git merge 2-find-all-completed-tasks
+Немаше никакви конфликти во случајов
+Добив:
+Auto-merging SI2025Lab1Main.java
+Merge made by the 'ort' strategy.
+ SI2025Lab1Main.java | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+git push origin master
+Добив:
+Enumerating objects: 7, done.
+Counting objects: 100% (7/7), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 475 bytes | 475.00 KiB/s, done.
+Total 3 (delta 1), reused 0 (delta 0), pack-reused 0 (from 0)
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+To https://github.com/aleksandardimoski/SI_2025_lab1_236031.git
+   d8a1a8e..59c3be2  master -> master
+
